@@ -1,5 +1,6 @@
 class Api::V1::GenresController < ApplicationController
   api :GET, '/api/v1/genres', 'List all genres'
+  param :q, Hash, desc: 'Ransack query params'
   param :page, :number, desc: 'Page number', required: false
   param :size_per_page, :number, desc: 'Number of genres per page', required: false
   returns code: 200 do
