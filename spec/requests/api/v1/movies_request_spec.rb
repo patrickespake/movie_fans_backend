@@ -2,11 +2,40 @@ require 'rails_helper'
 
 RSpec.describe "Movies", type: :request do
   describe "GET /api/v1/movies" do
+    let!(:movies) { create_list(:movie, 3) }
+
     it "returns a list of movies" do
-      create_list(:movie, 3)
       get api_v1_movies_path
+
       expect(response).to have_http_status(200)
       expect(response.body).to eq(Movie.all.to_json)
+    end
+
+    context "when searching" do
+      let!(:movie) { create(:movie, name: "The Matrix") }
+
+      it "returns a list of movies" do
+        get api_v1_movies_path, params: { q: { name_cont: "matrix" } }
+
+        expect(response).to have_http_status(200)
+        expect(response.body).to eq([movie].to_json)
+      end
+    end
+
+    context "when paginating" do
+      it "returns the first page" do
+        get api_v1_movies_path, params: { page: 1, per_page: 1 }
+
+        expect(response).to have_http_status(200)
+        expect(response.body).to eq([movies[0]].to_json)
+      end
+
+      it "returns the second page" do
+        get api_v1_movies_path, params: { page: 2, per_page: 2 }
+
+        expect(response).to have_http_status(200)
+        expect(response.body).to eq([movies[2]].to_json)
+      end
     end
   end
   

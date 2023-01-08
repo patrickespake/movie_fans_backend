@@ -1,6 +1,6 @@
 class Api::V1::OwnersController < ApplicationController
   def index
-    owners = Owner.ransack(params[:q]).result.includes(:movies).page(params[:page])
+    owners = Owner.ransack(params[:q]).result.includes(:movies).page(params[:page]).per_page(params[:per_page] || 10)
     render json: owners
   end
 
