@@ -48,6 +48,7 @@ end
 group :test do
   gem 'shoulda-matchers', '~> 5.0'
   gem 'faker', '~> 2.18.0'
+  gem 'simplecov', require: false
 end
 
 group :development do

@@ -17,3 +17,9 @@ rails db:seed
 ```
 rspec
 ```
+
+To see the test coverage:
+
+```
+open coverage/index.html
+```
