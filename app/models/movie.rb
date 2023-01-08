@@ -6,6 +6,7 @@ class Movie < ApplicationRecord
   # Validations
   validates :name, :thumbnail, :image, :market_price, presence: true
   validates :name, uniqueness: { scope: :owner_id }
+  validates :thumbnail, :image, url: true
 
   # Filters
   before_save :set_parameterized_name

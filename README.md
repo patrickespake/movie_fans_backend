@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Ruby on Rails backend project that provides genres, movies and owners APIs for the React frontend.
 
-Things you may want to cover:
+## Instructions to run the project locally
 
-* Ruby version
+### Database Postgres
 
-* System dependencies
+```
+rails db:create
+rails db:migrate
+rails db:seed
+```
 
-* Configuration
+## Instructions to run rspec tests
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+rspec
+```
