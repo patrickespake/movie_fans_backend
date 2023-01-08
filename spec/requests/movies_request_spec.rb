@@ -18,5 +18,4 @@ RSpec.describe "Movies", type: :request do
       expect(response.body).to eq(movie.to_json)
     end
   end
-  
 end
