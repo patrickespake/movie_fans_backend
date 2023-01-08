@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-  resources :movies
-  resources :owners
-  resources :genres, only: [:index]
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :movies, only: [:index, :show]
+  resources :owners, only: [:index, :show]
+  resources :genres, only: [:index, :show]
 end
