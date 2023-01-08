@@ -1,6 +1,6 @@
 class Api::V1::GenresController < ApplicationController
   def index
-    genres = Genre.all
+    genres = Genre.ransack(params[:q]).result.includes(:movies).page(params[:page])
     render json: genres
   end
 
