@@ -23,3 +23,13 @@ To see the test coverage:
 ```
 open coverage/index.html
 ```
+
+## Run project locally
+
+```
+rails server
+```
+
+## API Documentation
+
+Please visit [http://localhost:3000/apipie](http://localhost:3000/apipie)
