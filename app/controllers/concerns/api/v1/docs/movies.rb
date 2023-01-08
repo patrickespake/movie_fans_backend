@@ -1,7 +1,7 @@
 module Api::V1::Docs::Movies
   extend Apipie::DSL::Concern
 
-  api :GET, '/api/v1/movies', 'List all movies'
+  api :GET, '/v1/movies', 'List all movies'
   param :q, Hash, desc: 'Ransack query params'
   param :page, :number, desc: 'Page number', required: false
   param :size_per_page, :number, desc: 'Number of movies per page', required: false
@@ -67,7 +67,7 @@ module Api::V1::Docs::Movies
   formats ['json']
   def index; end
 
-  api :GET, '/api/v1/movies/:id', 'Show a movie'
+  api :GET, '/v1/movies/:id', 'Show a movie'
   param :id, :number, desc: 'Movie ID', required: true
   returns code: 200 do
     property :id, Integer, desc: 'Movie ID'

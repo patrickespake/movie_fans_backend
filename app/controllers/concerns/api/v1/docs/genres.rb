@@ -1,7 +1,7 @@
 module Api::V1::Docs::Genres
   extend Apipie::DSL::Concern
 
-  api :GET, '/api/v1/genres', 'List all genres'
+  api :GET, '/v1/genres', 'List all genres'
   param :q, Hash, desc: 'Ransack query params'
   param :page, :number, desc: 'Page number', required: false
   param :size_per_page, :number, desc: 'Number of genres per page', required: false
@@ -29,7 +29,7 @@ module Api::V1::Docs::Genres
   formats ['json']
   def index; end
 
-  api :GET, '/api/v1/genres/:id', 'Show a genre'
+  api :GET, '/v1/genres/:id', 'Show a genre'
   param :id, :number, desc: 'Genre ID', required: true
   returns code: 200 do
     property :id, Integer, desc: 'Genre ID'

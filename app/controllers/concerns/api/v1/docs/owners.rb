@@ -1,7 +1,7 @@
 module Api::V1::Docs::Owners
   extend Apipie::DSL::Concern
 
-  api :GET, '/api/v1/owners', 'List all owners'
+  api :GET, '/v1/owners', 'List all owners'
   param :q, Hash, desc: 'Ransack query params'
   param :page, :number, desc: 'Page number', required: false
   param :size_per_page, :number, desc: 'Number of owners per page', required: false
@@ -29,7 +29,7 @@ module Api::V1::Docs::Owners
   formats ['json']
   def index; end
 
-  api :GET, '/api/v1/owners/:id', 'Show an owner'
+  api :GET, '/v1/owners/:id', 'Show an owner'
   param :id, :number, desc: 'Owner ID', required: true
   returns code: 200 do
     property :id, Integer, desc: 'Owner ID'
