@@ -8,4 +8,6 @@ Rails.application.routes.draw do
       resources :genres, only: [:index, :show]
     end
   end
+
+  root 'apipie/apipies#index'
 end

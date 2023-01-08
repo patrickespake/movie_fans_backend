@@ -32,4 +32,4 @@ rails server
 
 ## API Documentation
 
-Please visit [http://localhost:3000/apipie](http://localhost:3000/apipie)
+Please visit [http://localhost:3000](http://localhost:3000)
