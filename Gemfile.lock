@@ -66,6 +66,9 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    apipie-rails (0.9.0)
+      actionpack (>= 5.0)
+      activesupport (>= 5.0)
     bootsnap (1.15.0)
       msgpack (~> 1.2)
     builder (3.2.4)
@@ -206,6 +209,7 @@ PLATFORMS
   x86_64-darwin-21
 
 DEPENDENCIES
+  apipie-rails (~> 0.9.0)
   bootsnap
   debug
   factory_bot_rails (~> 6.2.0)
