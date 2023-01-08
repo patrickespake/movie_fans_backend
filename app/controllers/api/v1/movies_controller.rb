@@ -1,6 +1,6 @@
 class Api::V1::MoviesController < ApplicationController
   def index
-    movies = Movie.ransack(params[:q]).result.includes(:owner, :genres).page(params[:page]).per_page(params[:per_page] || 10)
+    movies = Movie.ransack(params[:q]).result.includes(:owner, :genres).page(params[:page]).per_page(size_per_page)
     render json: movies.to_json(include: [:owner, :genres])
   end
 
