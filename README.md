@@ -4,6 +4,11 @@ This is a Ruby on Rails backend project that provides genres, movies and owners 
 
 ## Instructions to run the project locally
 
+```
+rbenv install 3.1.0
+bundle install
+```
+
 ### Database Postgres
 
 ```
@@ -30,6 +35,6 @@ open coverage/index.html
 rails server
 ```
 
-## API Documentation
+## API documentation
 
 Please visit [http://localhost:3000](http://localhost:3000)
